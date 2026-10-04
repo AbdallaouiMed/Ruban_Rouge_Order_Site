@@ -6,7 +6,7 @@ import { OpenStatus } from "./OpenStatus";
 import { LiveHours } from "./LiveHours";
 import { buttonClasses } from "@/components/ui/Button";
 
-const mapsDirections = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${bakery.name} ${bakery.address.street} ${bakery.address.city}`)}`;
+const mapsDirections = bakery.mapsUrl;
 
 /** Address, live open status, hours and quick actions. Used on Home and Contact. */
 export async function HoursCard({ title }: { title?: string }) {

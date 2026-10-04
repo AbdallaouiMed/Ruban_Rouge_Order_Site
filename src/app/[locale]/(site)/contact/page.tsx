@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { HoursCard } from "@/components/shop/HoursCard";
 import { PageBand } from "@/components/ui/PageBand";
-import { bakery, TODO_OWNER } from "@/data/bakery";
+import { bakery } from "@/data/bakery";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/contact">): Promise<Metadata> {
@@ -16,7 +16,6 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
-  const mapUrl = bakery.mapEmbedUrl !== TODO_OWNER ? bakery.mapEmbedUrl : null;
 
   return (
     <main id="main">
@@ -30,11 +29,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         <section aria-labelledby="visit-title" className="space-y-5">
           <h2 id="visit-title" className="font-display text-(length:--text-2xl)">{t("visitTitle")}</h2>
           <HoursCard />
-          {mapUrl ? (
-            <iframe title={t("mapTitle")} src={mapUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="aspect-[4/3] w-full rounded-md border-0 shadow-soft" />
-          ) : (
-            <div className="pattern-zellige flex aspect-[4/3] items-center justify-center rounded-md bg-butter p-6 text-center text-cocoa-soft">{t("mapPending")}</div>
-          )}
+          <iframe title={t("mapTitle")} src={bakery.mapEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="aspect-[4/3] w-full rounded-md border-0 shadow-soft" />
           <p className="flex flex-wrap items-center gap-x-4 text-(length:--text-sm)">
             <span className="font-semibold">{t("social")}</span>
             <a className="min-h-11 content-center font-semibold text-ribbon underline-offset-4 hover:underline" href={bakery.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>

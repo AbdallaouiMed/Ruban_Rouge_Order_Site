@@ -38,8 +38,10 @@ export const bakery = {
 
   /** Old coordinates (33.8992, -5.5271) are plausible but unverified. */
   geo: { lat: TODO_OWNER, lng: TODO_OWNER } as { lat: number | Todo; lng: number | Todo },
-  /** Real Google Maps "Embed a map" src; the old embed had an empty place id. */
-  mapEmbedUrl: TODO_OWNER as string | Todo,
+  /** Owner-provided Google Maps place (feature id 0xda044fcfca8a8bf:0x3af70ffff4b9e993). Opens the real listing. */
+  mapsUrl: "https://www.google.com/maps/place/ruban+rouge+meknes/data=!4m2!3m1!1s0xda044fcfca8a8bf:0x3af70ffff4b9e993",
+  /** Keyless embed of the same place, addressed by its Google CID (the hex id above, in decimal). */
+  mapEmbedUrl: "https://www.google.com/maps?cid=4248882365444254099&output=embed",
 
   phones: {
     boutique: "+212535510010",

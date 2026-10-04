@@ -103,7 +103,7 @@ Lighthouse on the production build (blocking the antivirus script this machine i
 
 The launch build refuses to run until this list is done (`RR_LAUNCH=1 npm run build`, or any Vercel production deploy, runs `scripts/check-placeholders.mjs --strict`).
 
-1. **Owners provide**: real prices, descriptions and allergens; real product and hero photos; delivery fee, zone and lead times; the WhatsApp number; the real Google Maps embed link; real customer reviews (none are shown until then); confirmation of the story text; the domain and the logo. `npm run check:placeholders` lists every open item.
+1. **Owners provide**: real prices, descriptions and allergens; real product and hero photos; delivery fee, zone and lead times; the WhatsApp number; real customer reviews (none are shown until then); confirmation of the story text; the domain and the logo. `npm run check:placeholders` lists every open item.
 2. **Build the real back end** (the code is designed for it: the demo stores and the contact adapters sit behind small interfaces):
    - Supabase Postgres for orders, products, availability and settings; run `supabase/migrations/`. Row-level security on, no public policies.
    - Real admin: Supabase Auth with server-side checks on every change. **The demo admin and its password are not security**: they ship in the page bundle.

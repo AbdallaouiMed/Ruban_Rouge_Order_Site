@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "title": "Ruban Rouge | Boulangerie & pâtisserie à Meknès",
+    "description": "Boulangerie et pâtisserie artisanale à Meknès. Commandez en ligne, composez votre boîte ou créez votre gâteau sur mesure."
+  },
+  "nav": {
+    "home": "Accueil",
+    "menu": "Créations",
+    "box": "Ma boîte",
+    "cakes": "Gâteaux",
+    "story": "Histoire",
+    "contact": "Contact",
+    "cart": "Panier",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "shop": "Boutique",
+    "primary": "Navigation principale",
+    "occasions": "Occasions",
+    "gift": "Offrir"
+  },
+  "common": {
+    "currency": "DH",
+    "skipToContent": "Aller au contenu",
+    "order": "Commander",
+    "open": "Ouvert",
+    "closed": "Fermé",
+    "openNow": "Ouvert maintenant",
+    "closedNow": "Fermé actuellement",
+    "call": "Appeler",
+    "whatsapp": "WhatsApp",
+    "directions": "Itinéraire",
+    "everyDay": "Tous les jours",
+    "pricePending": "Prix bientôt",
+    "photoPending": "Photo à venir",
+    "viewAll": "Voir tout",
+    "back": "Retour",
+    "freshToday": "Frais aujourd'hui",
+    "soldOut": "Épuisé",
+    "since": "Depuis {year}",
+    "required": "obligatoire",
+    "add": "Ajouter",
+    "added": "Ajouté",
+    "addNamed": "Ajouter {name} au panier",
+    "increase": "Augmenter la quantité",
+    "decrease": "Diminuer la quantité",
+    "subtotal": "Sous-total",
+    "total": "Total",
+    "delivery": "Livraison",
+    "free": "Offerte",
+    "quantity": "Quantité",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "continue": "Continuer",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "optionalLabel": "optionnel",
+    "quickContact": "Contact rapide"
+  },
+  "design": {
+    "title": "Système de design",
+    "intro": "Aperçu de la direction visuelle : couleurs, typographie, composants et le motif du ruban."
+  },
+  "footer": {
+    "tagline": "Boulangerie & pâtisserie à Meknès.",
+    "explore": "Explorer",
+    "visit": "Nous rendre visite",
+    "hours": "Horaires",
+    "follow": "Suivez-nous",
+    "rights": "© {year} Ruban Rouge. Tous droits réservés.",
+    "boutique": "Boutique",
+    "orders": "Commandes"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Meknès · depuis {year}",
+      "title": "Le goût du ruban rouge",
+      "subtitle": "Viennoiseries, pâtisseries et gâteaux faits main, à retirer en boutique ou à offrir.",
+      "cta": "Découvrir nos créations",
+      "cta2": "Composer une boîte",
+      "photo": "Photo principale à fournir"
+    },
+    "signature": {
+      "title": "Nos classiques",
+      "subtitle": "Les créations que l'on vient chercher chez nous."
+    },
+    "how": {
+      "title": "Commander, simplement",
+      "s1t": "Choisissez",
+      "s1d": "Parcourez nos créations ou composez votre boîte.",
+      "s2t": "Réservez",
+      "s2d": "Retrait en boutique ou livraison à Meknès, au créneau qui vous arrange.",
+      "s3t": "Savourez",
+      "s3d": "Payez au retrait ou à la livraison. Pas de compte à créer."
+    },
+    "story": {
+      "title": "Une maison, une histoire",
+      "text": "Ruban Rouge régale Meknès depuis {year}. Découvrez la maison, ses gestes et son héritage.",
+      "cta": "Notre histoire"
+    },
+    "reviews": {
+      "title": "Ils en parlent",
+      "empty": "Les avis de nos clients arrivent bientôt."
+    },
+    "visit": {
+      "title": "Passez nous voir",
+      "text": "Boutique ouverte tous les jours."
+    },
+    "occasions": {
+      "title": "Pour chaque occasion",
+      "text": "Anniversaires, mariages, Aïd, Ramadan… Nos créations accompagnent vos moments importants.",
+      "cta": "Créer un gâteau sur mesure",
+      "collections": "Voir les occasions",
+      "gift": "Offrir une boîte"
+    }
+  },
+  "menu": {
+    "title": "Nos créations",
+    "subtitle": "Tout ce que nous préparons, par catégorie.",
+    "search": "Rechercher une création",
+    "all": "Tout",
+    "results": "{count, plural, =0 {Aucun résultat} one {# création} other {# créations}}",
+    "empty": "Aucune création ne correspond à votre recherche.",
+    "reset": "Réinitialiser",
+    "filters": "Catégories",
+    "freshOnly": "Frais aujourd'hui seulement"
+  },
+  "product": {
+    "details": "Détails",
+    "descPending": "La description de cette création arrive bientôt.",
+    "allergens": "Allergènes",
+    "allergensPending": "Informations allergènes à venir. Demandez-nous en boutique.",
+    "orderHint": "Commandez en ligne pour un retrait en boutique ou une livraison à Meknès. Paiement à la réception.",
+    "related": "Dans la même catégorie",
+    "category": "Catégorie",
+    "addToCart": "Ajouter au panier",
+    "qty": "Quantité",
+    "noteLabel": "Note (facultatif)",
+    "notePlaceholder": "Ex. : sans noix, bien cuit…",
+    "notOrderable": "Indisponible pour le moment",
+    "notOrderableHint": "Revenez plus tard ou appelez-nous.",
+    "goToCart": "Voir le panier"
+  },
+  "story": {
+    "title": "Notre histoire",
+    "subtitle": "Une maison de Meknès, de génération en génération.",
+    "intro": "Ruban Rouge est une boulangerie-pâtisserie de Meknès, fondée en {year}. Cette page raconte son parcours.",
+    "draftNote": "Brouillon à valider par la famille avant publication.",
+    "timelineTitle": "Les grandes étapes",
+    "timeline": {
+      "origins": {
+        "t": "Les débuts",
+        "d": "Ouverture de la première boutique à Meknès."
+      },
+      "expansion": {
+        "t": "L'atelier grandit",
+        "d": "De nouvelles spécialités et un atelier de production."
+      },
+      "secondGeneration": {
+        "t": "Deuxième génération",
+        "d": "Le savoir-faire se transmet, les équipements se modernisent."
+      },
+      "diversification": {
+        "t": "Nouvelles gammes",
+        "d": "Glaces artisanales et pâtisserie marocaine rejoignent la vitrine."
+      },
+      "thirdGeneration": {
+        "t": "Troisième génération",
+        "d": "Un nouveau souffle de créativité, dans le respect de l'héritage."
+      },
+      "today": {
+        "t": "Aujourd'hui",
+        "d": "Commandes en ligne, boîtes cadeaux et gâteaux sur mesure."
+      }
+    },
+    "valuesTitle": "Ce qui nous guide",
+    "values": {
+      "craft": {
+        "t": "Le geste",
+        "d": "Des produits faits main, chaque jour."
+      },
+      "tradition": {
+        "t": "La tradition",
+        "d": "Des recettes transmises et préservées."
+      },
+      "welcome": {
+        "t": "L'accueil",
+        "d": "Chaque client est reçu comme un membre de la famille."
+      }
+    },
+    "cta": "Découvrir nos créations"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Une question, une commande spéciale ? Écrivez-nous.",
+    "visitTitle": "Nous trouver",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Nom complet",
+    "email": "Email",
+    "phone": "Téléphone",
+    "optional": "optionnel",
+    "message": "Votre message",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours…",
+    "success": "Merci ! Votre message est bien parti. Nous vous répondons rapidement.",
+    "error": "Le message n'a pas pu être envoyé. Réessayez ou appelez-nous.",
+    "rateLimited": "Trop de tentatives. Patientez quelques minutes.",
+    "errors": {
+      "name": "Indiquez votre nom (2 caractères minimum).",
+      "contact": "Indiquez un email ou un téléphone valide.",
+      "email": "Email invalide.",
+      "phone": "Téléphone invalide.",
+      "message": "Votre message doit faire entre 10 et 2000 caractères."
+    },
+    "contactHint": "Email ou téléphone : au moins un des deux.",
+    "mapTitle": "Carte : Ruban Rouge à Meknès",
+    "mapPending": "La carte sera ajoutée prochainement.",
+    "social": "Réseaux sociaux"
+  },
+  "demo": {
+    "banner": "Version de démonstration : produits, prix et commandes sont fictifs.",
+    "adminLink": "Espace admin",
+    "label": "Version de démonstration"
+  },
+  "cart": {
+    "title": "Votre panier",
+    "count": "{count, plural, one {# article} other {# articles}}",
+    "close": "Fermer le panier",
+    "empty": "Votre panier est vide",
+    "emptyHint": "Ajoutez quelques gourmandises pour commencer.",
+    "browse": "Voir nos créations",
+    "remove": "Retirer {name}",
+    "quantityOf": "Quantité de {name}",
+    "unavailable": "Ce produit n'est plus disponible",
+    "addNote": "Ajouter une note",
+    "editNote": "Modifier la note",
+    "noteLabel": "Note pour ce produit",
+    "notePlaceholder": "Ex. : sans noix",
+    "deliveryNote": "Retrait ou livraison à choisir à l'étape suivante. Paiement à la réception.",
+    "fixProblems": "Retirez les produits indisponibles pour continuer.",
+    "checkout": "Passer commande",
+    "continue": "Continuer mes achats",
+    "box": "Boîte de {size}",
+    "collection": "Collection"
+  },
+  "fresh": {
+    "title": "Frais aujourd'hui",
+    "subtitle": "Sorti du four ce matin. Premiers arrivés, premiers servis.",
+    "empty": "Le tableau du jour sera bientôt mis à jour.",
+    "soldOutTitle": "Épuisé aujourd'hui"
+  },
+  "checkout": {
+    "title": "Votre commande",
+    "subtitle": "Quelques informations et c'est parti. Paiement à la réception.",
+    "confirmationTitle": "Commande confirmée",
+    "emptyTitle": "Votre panier est vide",
+    "emptyText": "Ajoutez des créations pour passer commande.",
+    "backToMenu": "Voir nos créations",
+    "fulfillment": "Comment souhaitez-vous la recevoir ?",
+    "pickup": "Retrait en boutique",
+    "pickupHint": "Gratuit · Meknès",
+    "delivery": "Livraison à Meknès",
+    "deliveryHint": "{fee}, offerte dès {free}",
+    "giftLocked": "livraison obligatoire pour un cadeau",
+    "giftTo": "Cadeau pour {name}",
+    "whenPickup": "Quand passez-vous ?",
+    "whenDelivery": "Quand souhaitez-vous être livré ?",
+    "pickDay": "Choisir le jour",
+    "pickTime": "Choisir l'heure",
+    "today": "Aujourd'hui",
+    "tomorrow": "Demain",
+    "noSlots": "Aucun créneau disponible pour le moment. Appelez-nous pour passer commande.",
+    "you": "Vos coordonnées",
+    "name": "Nom complet",
+    "phone": "Téléphone",
+    "email": "Email",
+    "address": "Adresse de livraison",
+    "addressHint": "Rue, quartier, repères. Livraison dans Meknès uniquement.",
+    "note": "Une précision pour la commande ?",
+    "notePlaceholder": "Ex. : sonner deux fois, bougie d'anniversaire…",
+    "payment": "Paiement",
+    "paymentCash": "À la réception (espèces)",
+    "paymentNote": "Le paiement en ligne sera proposé prochainement.",
+    "summary": "Récapitulatif",
+    "freeIn": "Plus que {amount} pour la livraison offerte.",
+    "minOrder": "Minimum de commande pour la livraison : {min}. Il manque {amount}.",
+    "place": "Confirmer la commande",
+    "placing": "Envoi en cours…",
+    "errors": {
+      "name": "Indiquez votre nom (2 caractères minimum).",
+      "phone": "Indiquez un numéro de téléphone valide.",
+      "email": "Email invalide.",
+      "address": "Indiquez une adresse de livraison complète.",
+      "slot": "Choisissez un créneau.",
+      "below_minimum": "Le minimum de commande pour la livraison n'est pas atteint ({min}).",
+      "empty": "Votre panier est vide.",
+      "unavailable": "Un produit de votre panier n'est plus disponible. Retirez-le pour continuer.",
+      "gift": "Vérifiez les informations du destinataire.",
+      "gift_needs_delivery": "Un cadeau doit être livré.",
+      "generic": "La commande n'a pas pu être enregistrée.",
+      "offline": "La commande en ligne n'est pas encore disponible. Appelez-nous pour commander."
+    }
+  },
+  "order": {
+    "title": "Merci {name} !",
+    "subtitle": "Votre commande {number} est enregistrée. Nous la confirmons très vite.",
+    "demoNote": "Démonstration : la commande est enregistrée sur cet appareil et visible dans l'espace admin.",
+    "notFound": "Commande introuvable",
+    "notFoundText": "Cette commande n'existe pas sur cet appareil.",
+    "backToMenu": "Retour aux créations",
+    "progress": "Suivi de la commande",
+    "details": "Détails",
+    "items": "Votre commande",
+    "pickupAt": "Retrait en boutique",
+    "deliveryAt": "Livraison",
+    "address": "Adresse",
+    "payment": "Paiement",
+    "paymentCash": "À la réception (espèces)",
+    "placedAt": "Passée le",
+    "giftTo": "Cadeau pour {name}",
+    "cardMessage": "Message de la carte",
+    "waHint": "Facultatif : envoyez le récapitulatif à la boutique par WhatsApp pour accélérer la confirmation.",
+    "sendWhatsApp": "Envoyer par WhatsApp",
+    "cakeTitle": "Demande bien reçue",
+    "cakeText": "Nous vous répondons avec un devis ferme sous 24 h.",
+    "eventDate": "Date de l'événement",
+    "estimate": "Estimation indicative",
+    "status": {
+      "new": "Reçue",
+      "confirmed": "Confirmée",
+      "preparing": "En préparation",
+      "ready": "Prête à retirer",
+      "out_for_delivery": "En livraison",
+      "completed": "Terminée",
+      "cancelled": "Commande annulée"
+    }
+  },
+  "box": {
+    "title": "Composez votre boîte",
+    "subtitle": "Choisissez 6, 12 ou 24 pièces, remplissez la boîte, et nous la nouons d'un ruban rouge.",
+    "yourBox": "Votre boîte",
+    "filled": "{count} / {size} pièces",
+    "removeOne": "Retirer une pièce : {name}",
+    "addOne": "Ajouter {name}",
+    "full": "Votre boîte est prête, nouée d'un ruban rouge !",
+    "remaining": "Encore {count, plural, one {# pièce} other {# pièces}} à choisir.",
+    "boxFee": "Boîte et ruban : {fee}",
+    "addBox": "Ajouter la boîte au panier",
+    "fillHint": "Remplissez toutes les places pour l'ajouter au panier.",
+    "size": "Taille de la boîte",
+    "sizeOption": "{count} pièces",
+    "pick": "Choisissez vos pièces"
+  },
+  "cakes": {
+    "title": "Votre gâteau sur mesure",
+    "subtitle": "Anniversaire, mariage, fête… composez votre gâteau étape par étape. Nous revenons vers vous avec un devis ferme.",
+    "stepOf": "Étape {current} sur {total}",
+    "progress": "Progression de la demande",
+    "steps": {
+      "occasion": "Occasion",
+      "size": "Taille",
+      "flavor": "Saveur",
+      "filling": "Garniture",
+      "frosting": "Glaçage",
+      "decorations": "Décors",
+      "message": "Message et photo",
+      "date": "Date et budget",
+      "details": "Vos coordonnées"
+    },
+    "titles": {
+      "occasion": "Quelle est l'occasion ?",
+      "size": "Pour combien de personnes ?",
+      "flavor": "Quelle saveur pour le biscuit ?",
+      "filling": "Quelle garniture ?",
+      "frosting": "Quel glaçage ?",
+      "decorations": "Quels décors ?",
+      "message": "Une dédicace, une photo d'inspiration ?",
+      "date": "Pour quand, et quel budget ?",
+      "details": "Où vous répondre ?"
+    },
+    "servings": "{count} parts",
+    "from": "À partir de {price}",
+    "dedication": "Dédicace sur le gâteau",
+    "dedicationPlaceholder": "Ex. : Joyeux anniversaire Yasmine",
+    "photo": "Photo d'inspiration",
+    "choosePhoto": "Choisir une photo",
+    "photoAlt": "Photo d'inspiration choisie",
+    "removePhoto": "Retirer la photo",
+    "photoHint": "JPEG, PNG ou WebP. Elle aide notre pâtissier à comprendre votre idée.",
+    "photoErrors": {
+      "type": "Format non accepté : choisissez une image JPEG, PNG ou WebP.",
+      "size": "Image trop lourde (12 Mo maximum).",
+      "decode": "Cette image n'a pas pu être lue."
+    },
+    "eventDate": "Date de l'événement",
+    "leadHint": "Délai minimum : {days} jours.",
+    "budget": "Budget indicatif",
+    "budgetUpTo": "Jusqu'à {amount}",
+    "budgetAbove": "Plus de {amount}",
+    "name": "Nom complet",
+    "phone": "Téléphone",
+    "email": "Email",
+    "quoteNote": "Cette demande est sans engagement : nous vous répondons avec un devis ferme sous 24 h.",
+    "send": "Envoyer ma demande",
+    "summary": "Votre gâteau",
+    "estimate": "Estimation indicative",
+    "estimateNote": "Le prix final dépend du devis confirmé par la boutique.",
+    "errors": {
+      "name": "Indiquez votre nom (2 caractères minimum).",
+      "phone": "Indiquez un numéro de téléphone valide.",
+      "email": "Email invalide.",
+      "cake_date": "Choisissez une date à partir du {date}.",
+      "cake_spec": "Vérifiez les choix de votre gâteau.",
+      "offline": "Les demandes en ligne ne sont pas encore disponibles. Appelez-nous pour votre gâteau."
+    }
+  },
+  "gift": {
+    "title": "Offrir une gourmandise",
+    "subtitle": "Une boîte ou une collection livrée à quelqu'un que vous aimez, avec votre message sur une carte.",
+    "what": "Que souhaitez-vous offrir ?",
+    "whatBox": "Une boîte de la maison",
+    "whatBundle": "Une collection",
+    "boxSize": "Taille de la boîte",
+    "pieces": "{count} pièces",
+    "houseHint": "Assortiment varié choisi par nos pâtissiers, noué d'un ruban rouge.",
+    "recipient": "Pour qui ?",
+    "recipientName": "Nom du destinataire",
+    "recipientPhone": "Téléphone du destinataire",
+    "address": "Adresse de livraison",
+    "addressHint": "Livraison dans Meknès uniquement.",
+    "card": "Votre carte message",
+    "cardStyle": "Style de carte",
+    "styles": {
+      "ribbon": "Ruban",
+      "floral": "Doré",
+      "classic": "Classique"
+    },
+    "message": "Votre message",
+    "messagePlaceholder": "Écrivez quelques mots doux…",
+    "senderName": "De la part de",
+    "continue": "Continuer vers la commande",
+    "deliveryNote": "Le cadeau est livré au destinataire : vous choisirez le créneau à l'étape suivante.",
+    "preview": "Aperçu de la carte",
+    "cardTo": "Pour {name}",
+    "cardFrom": "De la part de {name}",
+    "nothingAvailable": "Aucune boîte n'est disponible aujourd'hui. Essayez une collection.",
+    "errors": {
+      "recipientName": "Indiquez le nom du destinataire.",
+      "recipientPhone": "Indiquez un téléphone valide pour le livreur.",
+      "address": "Indiquez une adresse complète.",
+      "senderName": "Indiquez votre nom.",
+      "message": "Écrivez un petit message (3 caractères minimum)."
+    }
+  },
+  "occasions": {
+    "title": "Occasions",
+    "subtitle": "Ramadan, Aïd, mariages, diplômes… des collections pensées pour vos grands moments.",
+    "discover": "Découvrir",
+    "preorder": "Précommandes : dates à confirmer",
+    "bundles": "Nos collections",
+    "addBundle": "Ajouter",
+    "unavailable": "Indisponible",
+    "more": "Pour aller plus loin",
+    "cakeTitle": "Un gâteau sur mesure",
+    "cakeText": "Composez le gâteau de votre événement.",
+    "cakeCta": "Créer mon gâteau",
+    "giftTitle": "Offrir à un proche",
+    "giftText": "Envoyez une collection avec une carte personnalisée.",
+    "giftCta": "Offrir une boîte"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Cette page n'existe pas ou n'existe plus. Retrouvez nos créations depuis l'accueil.",
+    "home": "Retour à l'accueil",
+    "menu": "Voir nos créations"
+  }
+}

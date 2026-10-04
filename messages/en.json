@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "title": "Ruban Rouge | Bakery & pastry shop in Meknes",
+    "description": "Artisan bakery and pastry shop in Meknes. Order online, build your own box or design a custom cake."
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Creations",
+    "box": "Build a box",
+    "cakes": "Cakes",
+    "story": "Our story",
+    "contact": "Contact",
+    "cart": "Cart",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "shop": "Shop",
+    "primary": "Main navigation",
+    "occasions": "Occasions",
+    "gift": "Send a treat"
+  },
+  "common": {
+    "currency": "MAD",
+    "skipToContent": "Skip to content",
+    "order": "Order now",
+    "open": "Open",
+    "closed": "Closed",
+    "openNow": "Open now",
+    "closedNow": "Closed right now",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "directions": "Directions",
+    "everyDay": "Every day",
+    "pricePending": "Price soon",
+    "photoPending": "Photo coming soon",
+    "viewAll": "View all",
+    "back": "Back",
+    "freshToday": "Fresh today",
+    "soldOut": "Sold out",
+    "since": "Since {year}",
+    "required": "required",
+    "add": "Add",
+    "added": "Added",
+    "addNamed": "Add {name} to cart",
+    "increase": "Increase quantity",
+    "decrease": "Decrease quantity",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "delivery": "Delivery",
+    "free": "Free",
+    "quantity": "Quantity",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "previous": "Back",
+    "next": "Next",
+    "optionalLabel": "optional",
+    "quickContact": "Quick contact"
+  },
+  "design": {
+    "title": "Design system",
+    "intro": "Preview of the visual direction: colors, typography, components and the ribbon motif."
+  },
+  "footer": {
+    "tagline": "Bakery & pastry shop in Meknes.",
+    "explore": "Explore",
+    "visit": "Visit us",
+    "hours": "Opening hours",
+    "follow": "Follow us",
+    "rights": "© {year} Ruban Rouge. All rights reserved.",
+    "boutique": "Shop",
+    "orders": "Orders"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Meknes · since {year}",
+      "title": "The taste of the red ribbon",
+      "subtitle": "Handmade viennoiseries, pastries and cakes. Pick up in store or send as a gift.",
+      "cta": "Discover our creations",
+      "cta2": "Build a box",
+      "photo": "Hero photo to be supplied"
+    },
+    "signature": {
+      "title": "Our classics",
+      "subtitle": "The creations people come to us for."
+    },
+    "how": {
+      "title": "Ordering made simple",
+      "s1t": "Choose",
+      "s1d": "Browse our creations or build your own box.",
+      "s2t": "Book",
+      "s2d": "In-store pickup or delivery in Meknes, at a time that suits you.",
+      "s3t": "Enjoy",
+      "s3d": "Pay at pickup or on delivery. No account needed."
+    },
+    "story": {
+      "title": "A house with a story",
+      "text": "Ruban Rouge has been treating Meknes since {year}. Meet the house, its craft and its heritage.",
+      "cta": "Our story"
+    },
+    "reviews": {
+      "title": "What people say",
+      "empty": "Customer reviews are coming soon."
+    },
+    "visit": {
+      "title": "Come and visit",
+      "text": "The shop is open every day."
+    },
+    "occasions": {
+      "title": "For every occasion",
+      "text": "Birthdays, weddings, Eid, Ramadan… our creations are part of your big moments.",
+      "cta": "Design a custom cake",
+      "collections": "See occasions",
+      "gift": "Send a box"
+    }
+  },
+  "menu": {
+    "title": "Our creations",
+    "subtitle": "Everything we make, by category.",
+    "search": "Search our creations",
+    "all": "All",
+    "results": "{count, plural, =0 {No results} one {# creation} other {# creations}}",
+    "empty": "No creation matches your search.",
+    "reset": "Reset",
+    "filters": "Categories",
+    "freshOnly": "Fresh today only"
+  },
+  "product": {
+    "details": "Details",
+    "descPending": "The description of this creation is coming soon.",
+    "allergens": "Allergens",
+    "allergensPending": "Allergen information coming soon. Ask us in store.",
+    "orderHint": "Order online for in-store pickup or delivery in Meknes. Pay on receipt.",
+    "related": "In the same category",
+    "category": "Category",
+    "addToCart": "Add to cart",
+    "qty": "Quantity",
+    "noteLabel": "Note (optional)",
+    "notePlaceholder": "E.g. no nuts, well done…",
+    "notOrderable": "Currently unavailable",
+    "notOrderableHint": "Come back later or give us a call.",
+    "goToCart": "View cart"
+  },
+  "story": {
+    "title": "Our story",
+    "subtitle": "A Meknes house, from generation to generation.",
+    "intro": "Ruban Rouge is a bakery and pastry shop in Meknes, founded in {year}. This page tells its journey.",
+    "draftNote": "Draft to be validated by the family before publishing.",
+    "timelineTitle": "Key moments",
+    "timeline": {
+      "origins": {
+        "t": "The beginnings",
+        "d": "The first shop opens in Meknes."
+      },
+      "expansion": {
+        "t": "The workshop grows",
+        "d": "New specialties and a production workshop."
+      },
+      "secondGeneration": {
+        "t": "Second generation",
+        "d": "The craft is handed down and equipment modernised."
+      },
+      "diversification": {
+        "t": "New ranges",
+        "d": "Artisan ice cream and Moroccan pastry join the counter."
+      },
+      "thirdGeneration": {
+        "t": "Third generation",
+        "d": "A fresh wave of creativity that respects the heritage."
+      },
+      "today": {
+        "t": "Today",
+        "d": "Online ordering, gift boxes and custom cakes."
+      }
+    },
+    "valuesTitle": "What guides us",
+    "values": {
+      "craft": {
+        "t": "The craft",
+        "d": "Handmade products, every day."
+      },
+      "tradition": {
+        "t": "Tradition",
+        "d": "Recipes handed down and preserved."
+      },
+      "welcome": {
+        "t": "Welcome",
+        "d": "Every customer is received like family."
+      }
+    },
+    "cta": "Discover our creations"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "A question or a special order? Write to us.",
+    "visitTitle": "Find us",
+    "formTitle": "Send us a message",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "optional": "optional",
+    "message": "Your message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thank you! Your message is on its way. We will reply soon.",
+    "error": "The message could not be sent. Try again or call us.",
+    "rateLimited": "Too many attempts. Please wait a few minutes.",
+    "errors": {
+      "name": "Enter your name (2 characters minimum).",
+      "contact": "Enter a valid email or phone number.",
+      "email": "Invalid email.",
+      "phone": "Invalid phone number.",
+      "message": "Your message must be between 10 and 2000 characters."
+    },
+    "contactHint": "Email or phone: at least one of the two.",
+    "mapTitle": "Map: Ruban Rouge in Meknes",
+    "mapPending": "The map will be added soon.",
+    "social": "Social media"
+  },
+  "demo": {
+    "banner": "Demo version: products, prices and orders are fictional.",
+    "adminLink": "Admin area",
+    "label": "Demo version"
+  },
+  "cart": {
+    "title": "Your cart",
+    "count": "{count, plural, one {# item} other {# items}}",
+    "close": "Close cart",
+    "empty": "Your cart is empty",
+    "emptyHint": "Add a few treats to get started.",
+    "browse": "Browse our creations",
+    "remove": "Remove {name}",
+    "quantityOf": "Quantity of {name}",
+    "unavailable": "This product is no longer available",
+    "addNote": "Add a note",
+    "editNote": "Edit note",
+    "noteLabel": "Note for this product",
+    "notePlaceholder": "E.g. no nuts",
+    "deliveryNote": "Pickup or delivery is chosen at the next step. Pay on receipt.",
+    "fixProblems": "Remove unavailable products to continue.",
+    "checkout": "Checkout",
+    "continue": "Continue shopping",
+    "box": "Box of {size}",
+    "collection": "Collection"
+  },
+  "fresh": {
+    "title": "Fresh today",
+    "subtitle": "Out of the oven this morning. First come, first served.",
+    "empty": "Today's board will be updated soon.",
+    "soldOutTitle": "Sold out today"
+  },
+  "checkout": {
+    "title": "Your order",
+    "subtitle": "A few details and you're done. Pay on receipt.",
+    "confirmationTitle": "Order confirmed",
+    "emptyTitle": "Your cart is empty",
+    "emptyText": "Add some creations to place an order.",
+    "backToMenu": "Browse our creations",
+    "fulfillment": "How would you like to receive it?",
+    "pickup": "In-store pickup",
+    "pickupHint": "Free · Meknes",
+    "delivery": "Delivery in Meknes",
+    "deliveryHint": "{fee}, free from {free}",
+    "giftLocked": "gifts must be delivered",
+    "giftTo": "Gift for {name}",
+    "whenPickup": "When will you come by?",
+    "whenDelivery": "When would you like it delivered?",
+    "pickDay": "Choose the day",
+    "pickTime": "Choose the time",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "noSlots": "No time slot is available right now. Call us to place your order.",
+    "you": "Your details",
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Delivery address",
+    "addressHint": "Street, neighbourhood, landmarks. Delivery within Meknes only.",
+    "note": "Anything we should know?",
+    "notePlaceholder": "E.g. ring twice, birthday candle…",
+    "payment": "Payment",
+    "paymentCash": "On receipt (cash)",
+    "paymentNote": "Online payment will be offered soon.",
+    "summary": "Summary",
+    "freeIn": "Only {amount} more for free delivery.",
+    "minOrder": "Minimum order for delivery: {min}. {amount} to go.",
+    "place": "Confirm order",
+    "placing": "Sending…",
+    "errors": {
+      "name": "Enter your name (2 characters minimum).",
+      "phone": "Enter a valid phone number.",
+      "email": "Invalid email.",
+      "address": "Enter a complete delivery address.",
+      "slot": "Choose a time slot.",
+      "below_minimum": "The minimum order for delivery is not reached ({min}).",
+      "empty": "Your cart is empty.",
+      "unavailable": "A product in your cart is no longer available. Remove it to continue.",
+      "gift": "Check the recipient's details.",
+      "gift_needs_delivery": "A gift must be delivered.",
+      "generic": "The order could not be saved.",
+      "offline": "Online ordering is not available yet. Please call us to order."
+    }
+  },
+  "order": {
+    "title": "Thank you {name}!",
+    "subtitle": "Your order {number} is registered. We will confirm it very soon.",
+    "demoNote": "Demo: the order is saved on this device and visible in the admin area.",
+    "notFound": "Order not found",
+    "notFoundText": "This order does not exist on this device.",
+    "backToMenu": "Back to creations",
+    "progress": "Order progress",
+    "details": "Details",
+    "items": "Your order",
+    "pickupAt": "In-store pickup",
+    "deliveryAt": "Delivery",
+    "address": "Address",
+    "payment": "Payment",
+    "paymentCash": "On receipt (cash)",
+    "placedAt": "Placed on",
+    "giftTo": "Gift for {name}",
+    "cardMessage": "Card message",
+    "waHint": "Optional: send the summary to the shop on WhatsApp to speed up confirmation.",
+    "sendWhatsApp": "Send on WhatsApp",
+    "cakeTitle": "Request received",
+    "cakeText": "We will reply with a firm quote within 24 hours.",
+    "eventDate": "Event date",
+    "estimate": "Indicative estimate",
+    "status": {
+      "new": "Received",
+      "confirmed": "Confirmed",
+      "preparing": "Being prepared",
+      "ready": "Ready for pickup",
+      "out_for_delivery": "Out for delivery",
+      "completed": "Completed",
+      "cancelled": "Order cancelled"
+    }
+  },
+  "box": {
+    "title": "Build your own box",
+    "subtitle": "Pick 6, 12 or 24 pieces, fill the box, and we tie it with a red ribbon.",
+    "yourBox": "Your box",
+    "filled": "{count} / {size} pieces",
+    "removeOne": "Remove one piece: {name}",
+    "addOne": "Add {name}",
+    "full": "Your box is ready, tied with a red ribbon!",
+    "remaining": "{count, plural, one {# piece} other {# pieces}} left to choose.",
+    "boxFee": "Box and ribbon: {fee}",
+    "addBox": "Add box to cart",
+    "fillHint": "Fill every slot to add it to your cart.",
+    "size": "Box size",
+    "sizeOption": "{count} pieces",
+    "pick": "Choose your pieces"
+  },
+  "cakes": {
+    "title": "Your custom cake",
+    "subtitle": "Birthday, wedding, celebration… build your cake step by step. We come back with a firm quote.",
+    "stepOf": "Step {current} of {total}",
+    "progress": "Request progress",
+    "steps": {
+      "occasion": "Occasion",
+      "size": "Size",
+      "flavor": "Flavour",
+      "filling": "Filling",
+      "frosting": "Frosting",
+      "decorations": "Decorations",
+      "message": "Message and photo",
+      "date": "Date and budget",
+      "details": "Your details"
+    },
+    "titles": {
+      "occasion": "What is the occasion?",
+      "size": "For how many people?",
+      "flavor": "Which sponge flavour?",
+      "filling": "Which filling?",
+      "frosting": "Which frosting?",
+      "decorations": "Which decorations?",
+      "message": "A dedication, an inspiration photo?",
+      "date": "For when, and what budget?",
+      "details": "Where can we reach you?"
+    },
+    "servings": "{count} servings",
+    "from": "From {price}",
+    "dedication": "Dedication on the cake",
+    "dedicationPlaceholder": "E.g. Happy birthday Yasmine",
+    "photo": "Inspiration photo",
+    "choosePhoto": "Choose a photo",
+    "photoAlt": "Chosen inspiration photo",
+    "removePhoto": "Remove photo",
+    "photoHint": "JPEG, PNG or WebP. It helps our pastry chef understand your idea.",
+    "photoErrors": {
+      "type": "Unsupported format: choose a JPEG, PNG or WebP image.",
+      "size": "Image too large (12 MB maximum).",
+      "decode": "This image could not be read."
+    },
+    "eventDate": "Event date",
+    "leadHint": "Minimum notice: {days} days.",
+    "budget": "Indicative budget",
+    "budgetUpTo": "Up to {amount}",
+    "budgetAbove": "Over {amount}",
+    "name": "Full name",
+    "phone": "Phone",
+    "email": "Email",
+    "quoteNote": "This request is without obligation: we reply with a firm quote within 24 hours.",
+    "send": "Send my request",
+    "summary": "Your cake",
+    "estimate": "Indicative estimate",
+    "estimateNote": "The final price depends on the quote confirmed by the shop.",
+    "errors": {
+      "name": "Enter your name (2 characters minimum).",
+      "phone": "Enter a valid phone number.",
+      "email": "Invalid email.",
+      "cake_date": "Choose a date from {date} onwards.",
+      "cake_spec": "Check your cake choices.",
+      "offline": "Online requests are not available yet. Please call us about your cake."
+    }
+  },
+  "gift": {
+    "title": "Send a treat",
+    "subtitle": "A box or collection delivered to someone you love, with your message on a card.",
+    "what": "What would you like to send?",
+    "whatBox": "A house box",
+    "whatBundle": "A collection",
+    "boxSize": "Box size",
+    "pieces": "{count} pieces",
+    "houseHint": "A varied assortment chosen by our pastry chefs, tied with a red ribbon.",
+    "recipient": "For whom?",
+    "recipientName": "Recipient's name",
+    "recipientPhone": "Recipient's phone",
+    "address": "Delivery address",
+    "addressHint": "Delivery within Meknes only.",
+    "card": "Your message card",
+    "cardStyle": "Card style",
+    "styles": {
+      "ribbon": "Ribbon",
+      "floral": "Golden",
+      "classic": "Classic"
+    },
+    "message": "Your message",
+    "messagePlaceholder": "Write a few kind words…",
+    "senderName": "From",
+    "continue": "Continue to checkout",
+    "deliveryNote": "The gift is delivered to the recipient: you will choose the time slot at the next step.",
+    "preview": "Card preview",
+    "cardTo": "For {name}",
+    "cardFrom": "From {name}",
+    "nothingAvailable": "No box is available today. Try a collection.",
+    "errors": {
+      "recipientName": "Enter the recipient's name.",
+      "recipientPhone": "Enter a valid phone number for the courier.",
+      "address": "Enter a complete address.",
+      "senderName": "Enter your name.",
+      "message": "Write a short message (3 characters minimum)."
+    }
+  },
+  "occasions": {
+    "title": "Occasions",
+    "subtitle": "Ramadan, Eid, weddings, graduations… collections made for your big moments.",
+    "discover": "Discover",
+    "preorder": "Pre-orders: dates to be confirmed",
+    "bundles": "Our collections",
+    "addBundle": "Add",
+    "unavailable": "Unavailable",
+    "more": "Go further",
+    "cakeTitle": "A custom cake",
+    "cakeText": "Design the cake for your event.",
+    "cakeCta": "Create my cake",
+    "giftTitle": "Send to someone close",
+    "giftText": "Send a collection with a personalised card.",
+    "giftCta": "Send a box"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or is no longer available. Find our creations from the home page.",
+    "home": "Back to home",
+    "menu": "Browse our creations"
+  }
+}

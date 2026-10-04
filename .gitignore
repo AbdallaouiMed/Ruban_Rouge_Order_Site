@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# keep the template of required variables in version control
+!.env.example
+
+# Playwright output
+/test-results/
+/playwright-report/
+/blob-report/

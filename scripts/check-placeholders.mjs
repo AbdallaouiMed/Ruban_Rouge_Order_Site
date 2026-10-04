@@ -4,8 +4,11 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = new URL("../src/data", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
-// Strict (build fails) when asked explicitly, on a Vercel production deploy, or with RR_LAUNCH=1.
-const strict = process.argv.includes("--strict") || process.env.VERCEL_ENV === "production" || process.env.RR_LAUNCH === "1";
+// Strict (build fails) when asked explicitly (--strict), on a Vercel production deploy, or with RR_LAUNCH=1.
+// RR_SHOWCASE=1 is the one deliberate exception: a public DEMO deploy for client reviews. It still shows
+// the demo banner, is not indexed by search engines, and never sends or stores real customer data.
+const showcase = process.env.RR_SHOWCASE === "1";
+const strict = process.argv.includes("--strict") || (!showcase && (process.env.VERCEL_ENV === "production" || process.env.RR_LAUNCH === "1"));
 const hits = [];
 
 const walk = (dir) => {
@@ -30,6 +33,7 @@ console.log(`\n${hits.length} placeholder line(s).`);
 
 // Demo mode ships fake prices, a fake admin login and browser-only orders: never in a launch build.
 const demoOn = process.env.NEXT_PUBLIC_DEMO_MODE !== "0";
+if (showcase) console.log("Showcase deploy (RR_SHOWCASE=1): launch checks are skipped. This is a demo, not a launch.");
 if (demoOn) console.log("Demo mode is ON (NEXT_PUBLIC_DEMO_MODE is not 0): placeholder prices, demo admin and browser-only orders are active.");
 
 if (strict && (hits.length || demoOn)) {

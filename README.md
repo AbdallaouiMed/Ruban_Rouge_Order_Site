@@ -112,11 +112,16 @@ The launch build refuses to run until this list is done (`RR_LAUNCH=1 npm run bu
 3. **Turn demo mode off**: set `NEXT_PUBLIC_DEMO_MODE=0`. This hides the demo banner, 404s the demo admin and removes placeholder prices and availability.
 4. **Harden**: replace the in-memory rate limiter with a shared store (Upstash or the database). The Content-Security-Policy in `next.config.ts` already allows only Turnstile and Google Maps; its `script-src` still needs `'unsafe-inline'` for Next's inline bootstrap, so move to nonces (dynamic rendering) or Subresource Integrity when you can.
 5. **Privacy**: add a privacy notice to the contact and checkout forms and decide how long customer data is kept. Delete `/fr/design-system` or keep it out of production.
-6. Set the real `siteUrl` in `src/data/bakery.ts` (used for canonical links, hreflang, the sitemap and structured data).
+6. Set `NEXT_PUBLIC_SITE_URL` to the real domain (used for canonical links, hreflang, the sitemap and structured data).
 
 ### Deploying
 
-The app is a standard Next.js project and deploys to Vercel with no extra configuration: import the repository, set the environment variables above, and deploy. The GitHub Actions workflow in `.github/workflows/ci.yml` runs the type check, lint, unit tests, build and end-to-end tests on every push and pull request.
+The app is a standard Next.js project and deploys to Vercel: import the repository and deploy. `vercel.json` pins the region to Paris (`cdg1`, closest to Meknès).
+
+- **Showcase (demo) deploy**: set `RR_SHOWCASE=1`. This is the one deliberate way past the launch gate, for showing the demo to a client. The site keeps its demo banner, orders stay in each visitor's browser, the contact form accepts and discards messages, and it is **not indexed** (`robots.txt` disallows everything and pages carry `noindex`). Optionally set `NEXT_PUBLIC_SITE_URL` to the deployed address; otherwise the Vercel production URL is used.
+- **Real launch**: leave `RR_SHOWCASE` unset and finish [Going live](#going-live). A production deploy then fails until the placeholders are gone and demo mode is off.
+
+The GitHub Actions workflow in `.github/workflows/ci.yml` runs the type check, lint, unit tests, build and end-to-end tests on every push and pull request.
 
 ## Known limitations of the demo
 

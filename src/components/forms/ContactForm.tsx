@@ -5,6 +5,7 @@ import Script from "next/script";
 import { useLocale, useTranslations } from "next-intl";
 import { CheckCircle2 } from "lucide-react";
 import { contactSchema, fieldErrors } from "@/lib/schemas/contact";
+import { isDemo } from "@/lib/demo/config";
 
 type Field = "name" | "email" | "phone" | "message";
 type Status = "idle" | "sending" | "success" | "error" | "rate_limited";
@@ -104,6 +105,7 @@ export function ContactForm() {
           <div className="rounded-md bg-success p-6 text-white">
             <CheckCircle2 aria-hidden="true" className="mb-2 size-8" />
             <p className="font-semibold">{t("success")}</p>
+            {isDemo && <p className="mt-1 text-sm">{t("demoNote")}</p>}
           </div>
         )}
       </div>

@@ -46,6 +46,13 @@ export async function POST(req: NextRequest) {
   const activeNotifiers = notifiers.filter((n) => n.configured);
   const nothingConfigured = activeStores.length + activeNotifiers.length === 0;
 
+  // Public demo deploy (demo mode on, nothing configured): accept and discard so the form can be shown to clients.
+  // Read per call, not at import, so it follows the environment. Demo off keeps the fail-closed behaviour below.
+  if (nothingConfigured && process.env.NEXT_PUBLIC_DEMO_MODE !== "0") {
+    console.info("[contact] demo mode: message accepted and discarded");
+    return json({ ok: true, demo: true }, 200);
+  }
+
   if (nothingConfigured && process.env.NODE_ENV === "production") return json({ error: "not_configured" }, 503);
 
   if (!(await verifyTurnstile(data.turnstileToken, ip))) return json({ error: "captcha" }, 403);

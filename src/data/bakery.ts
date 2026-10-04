@@ -57,8 +57,13 @@ export const bakery = {
     facebook: "https://facebook.com/PatisserieRubanRouge",
   },
 
-  /** Placeholder domain from the old site; not confirmed. */
-  siteUrl: "https://rubanrouge-meknes.ma",
+  /**
+   * Canonical origin for links, hreflang and the sitemap. NEXT_PUBLIC_SITE_URL wins, then the Vercel
+   * production URL; the old site's domain is only a last-resort placeholder (not confirmed as theirs).
+   */
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://rubanrouge-meknes.ma"),
 
   /** Old site: every day 06:30 - 22:30. No Ramadan/Friday/holiday variation known. */
   hours: {

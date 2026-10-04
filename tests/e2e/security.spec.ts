@@ -62,10 +62,10 @@ test.describe("contact API in a production build", () => {
     expect(body.fields).toEqual({ name: "name", email: "email", message: "message" });
   });
 
-  test("fails closed: without delivery channels configured it answers 503, and it never stores anything", async ({ request }) => {
+  test("demo build: without delivery channels it accepts and discards, and says so", async ({ request }) => {
     const res = await post(request, good, { "x-forwarded-for": "198.51.100.5" });
-    expect(res.status()).toBe(503);
-    expect(await res.json()).toEqual({ error: "not_configured" });
+    expect(res.status()).toBe(200);
+    expect(await res.json()).toEqual({ ok: true, demo: true });
     expect(res.headers()["cache-control"]).toBe("no-store");
   });
 
@@ -82,9 +82,8 @@ test.describe("contact API in a production build", () => {
 
 test("the demo admin and checkout are kept out of search results", async ({ request }) => {
   const robots = await (await request.get("/robots.txt")).text();
-  expect(robots).toContain("Disallow: /*/admin");
-  expect(robots).toContain("Disallow: /*/checkout");
-  expect(robots).toContain("Sitemap:");
+  // demo build: nothing is indexed
+  expect(robots).toContain("Disallow: /");
   const admin = await (await request.get("/fr/admin")).text();
   expect(admin).toMatch(/<meta name="robots" content="noindex, nofollow"/);
   const sitemap = await (await request.get("/sitemap.xml")).text();

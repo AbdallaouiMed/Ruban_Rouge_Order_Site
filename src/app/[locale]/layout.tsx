@@ -6,6 +6,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { bakery } from "@/data/bakery";
 import { isRtl, routing } from "@/i18n/routing";
 import { DemoProvider } from "@/components/demo/DemoProvider";
+import { isDemo } from "@/lib/demo/config";
 import "../globals.css";
 
 // Latin faces are preloaded (French and English are the bulk of the traffic). The weight axis alone is
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
     metadataBase: new URL(bakery.siteUrl),
     title: { default: t("title"), template: `%s | ${bakery.name}` },
     description: t("description"),
+    ...(isDemo ? { robots: { index: false, follow: false } } : {}),
   };
 }
 

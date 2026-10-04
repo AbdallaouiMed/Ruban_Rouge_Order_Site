@@ -106,7 +106,19 @@ describe("POST /api/contact", () => {
     expect(Number(res.headers.get("retry-after"))).toBeGreaterThan(0);
   });
 
-  it("in development accepts and discards when nothing is configured", async () => {
+  it("in demo mode accepts and discards when nothing is configured, even in production without a captcha key", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("TURNSTILE_SECRET_KEY", "");
+    mocks.store.configured = false;
+    mocks.notifier.configured = false;
+    const res = await call(good);
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ ok: true, demo: true });
+    expect(mocks.store.save).not.toHaveBeenCalled();
+  });
+
+  it("with demo mode off, in development, accepts and discards when nothing is configured", async () => {
+    vi.stubEnv("NEXT_PUBLIC_DEMO_MODE", "0");
     mocks.store.configured = false;
     mocks.notifier.configured = false;
     const res = await call(good);
@@ -114,8 +126,9 @@ describe("POST /api/contact", () => {
     expect(await res.json()).toMatchObject({ dev: true });
   });
 
-  it("in production reports 503 not_configured (not a captcha error) when nothing is configured", async () => {
+  it("in production (demo off) reports 503 not_configured (not a captcha error) when nothing is configured", async () => {
     vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_DEMO_MODE", "0");
     mocks.store.configured = false;
     mocks.notifier.configured = false;
     const res = await call(good);
@@ -123,8 +136,9 @@ describe("POST /api/contact", () => {
     expect(await res.json()).toEqual({ error: "not_configured" });
   });
 
-  it("in production refuses submissions when Turnstile is not configured (fail closed)", async () => {
+  it("in production (demo off) refuses submissions when Turnstile is not configured (fail closed)", async () => {
     vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_DEMO_MODE", "0");
     vi.stubEnv("TURNSTILE_SECRET_KEY", "");
     const res = await call(good);
     expect(res.status).toBe(403);

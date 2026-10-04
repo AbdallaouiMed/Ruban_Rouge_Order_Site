@@ -204,6 +204,7 @@
     "send": "Send message",
     "sending": "Sending…",
     "success": "Thank you! Your message is on its way. We will reply soon.",
+    "demoNote": "Demo: this message is not sent to the bakery.",
     "error": "The message could not be sent. Try again or call us.",
     "rateLimited": "Too many attempts. Please wait a few minutes.",
     "errors": {

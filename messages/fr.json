@@ -204,6 +204,7 @@
     "send": "Envoyer le message",
     "sending": "Envoi en cours…",
     "success": "Merci ! Votre message est bien parti. Nous vous répondons rapidement.",
+    "demoNote": "Démo : ce message n’est pas transmis à la boulangerie.",
     "error": "Le message n'a pas pu être envoyé. Réessayez ou appelez-nous.",
     "rateLimited": "Trop de tentatives. Patientez quelques minutes.",
     "errors": {

@@ -11,6 +11,8 @@ import { SlotPicker } from "@/components/shop/SlotPicker";
 import { useLineInfo } from "@/components/shop/CartDrawer";
 import { useCartSummary, useSettings } from "@/lib/demo/hooks";
 import { useCart, useDemoData, useHydration } from "@/lib/demo/store";
+import { useLiveSync } from "@/components/demo/useLiveSync";
+import { reserveSeq } from "@/lib/demo/live";
 import { formatMad } from "@/lib/format";
 import type { FulfillmentMethod } from "@/lib/demo/types";
 import type { Locale } from "@/i18n/routing";
@@ -25,6 +27,8 @@ export function CheckoutForm() {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const ready = useHydration((s) => s.ready);
+  // Keeps order numbers ahead of orders taken on other devices.
+  useLiveSync(ready);
   const items = useCart((s) => s.items);
   const gift = useCart((s) => s.gift);
   const settings = useSettings();
@@ -53,11 +57,13 @@ export function CheckoutForm() {
     );
   }
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const get = (k: string) => String(fd.get(k) ?? "").trim();
     setBusy(true);
+    const seq = (await reserveSeq()) ?? undefined;
     const res = placeOrder({
       items,
       customer: { name: get("name"), phone: get("phone"), email: get("email") || undefined },
@@ -67,7 +73,7 @@ export function CheckoutForm() {
       note: get("note"),
       gift,
       locale,
-    });
+    }, seq);
     if (res.ok) {
       useCart.getState().clear();
       router.push(`/order/${res.order.id}`);
@@ -76,7 +82,7 @@ export function CheckoutForm() {
     setBusy(false);
     const field = (["name", "phone", "email", "address", "slot"] as const).find((f) => f === res.error);
     setErrors(field ? { [field]: res.error } : { form: res.error });
-    const target = field ? e.currentTarget.querySelector<HTMLElement>(field === "slot" ? "#slot-anchor" : `[name="${field}"]`) : null;
+    const target = field ? form.querySelector<HTMLElement>(field === "slot" ? "#slot-anchor" : `[name="${field}"]`) : null;
     target?.focus();
     if (res.error === "below_minimum") setErrors({ form: "below_minimum" });
   }

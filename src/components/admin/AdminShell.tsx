@@ -6,6 +6,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { DEMO_ADMIN_PASSWORD } from "@/lib/demo/config";
 import { useDemoData } from "@/lib/demo/store";
+import { useLiveSync } from "@/components/demo/useLiveSync";
 import { adminBtnPrimary, fieldClass } from "./ui";
 
 const nav = [
@@ -104,6 +105,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
   const orders = useDemoData((s) => s.orders);
   const authed = useFlag(SESSION_KEY);
   const sound = useFlag(SOUND_KEY) ?? false;
+  useLiveSync(authed === true);
 
   // Orders that arrive while the admin is open (public checkout in another tab, or "simulate")
   // show as toasts for a few seconds. Derived from the list, so there is no state to sync.

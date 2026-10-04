@@ -55,7 +55,16 @@ Open `/fr/admin` and sign in with the demo password (`DEMO_ADMIN_PASSWORD` in `s
 - **Images du site**: replace the home photo, the story photo and the occasions banner.
 - **Réglages**: opening hours (which drive the "open now" badge and the pickup slots), delivery fee, free-delivery threshold, minimum order, preparation lead time, box fee.
 
-Everything is stored in the browser's `localStorage` on the device you use. "Réinitialiser la démo" (in Réglages) wipes it.
+Orders sync across devices (see below). Everything else (prices, photos, settings) is stored in the browser's `localStorage` on the device you use. "Réinitialiser la démo" (in Réglages) wipes it.
+
+### Live orders across devices
+
+An order placed on a phone reaches the admin on a laptop in about a second, and the admin's status changes flow back to the customer's confirmation page. The browser pushes each order to `/api/live/orders`; the admin and the confirmation page poll it once a second (an unchanged list answers `304`). Order numbers are reserved from the server (`/api/live/seq`) so two devices never get the same one.
+
+- **On Vercel, connect a Redis store**, otherwise orders cannot cross between devices: in the project, open *Storage*, add **Upstash Redis** from the Marketplace and connect it. That sets `KV_REST_API_URL` and `KV_REST_API_TOKEN` (or set `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`). Redeploy once.
+- Without it the server keeps orders in memory, which works locally (one process) but not on serverless, where each instance has its own memory.
+- Shared demo orders expire after 24 hours. The list is capped at 300. Simulated and seeded orders never leave the device.
+- This is demo plumbing, not security: anyone who can reach the site can post a demo order. It is switched off (404) when `NEXT_PUBLIC_DEMO_MODE=0`; the real back end replaces it.
 
 ## Where things are
 

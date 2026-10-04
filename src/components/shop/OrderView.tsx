@@ -7,6 +7,7 @@ import { buttonClasses } from "@/components/ui/Button";
 import { RibbonDivider } from "@/components/ui/RibbonDivider";
 import { isDemo } from "@/lib/demo/config";
 import { useDemoData, useHydration } from "@/lib/demo/store";
+import { useLiveSync } from "@/components/demo/useLiveSync";
 import { formatDateTime, formatDay, formatMad, formatSlot } from "@/lib/format";
 import { bakeryWhatsApp, orderMessage, whatsAppLink } from "@/lib/whatsapp";
 import type { OrderStatus } from "@/lib/demo/types";
@@ -21,6 +22,8 @@ export function OrderView({ id }: { id: string }) {
   const locale = useLocale() as Locale;
   const ready = useHydration((s) => s.ready);
   const order = useDemoData((s) => s.orders.find((o) => o.id === id));
+  // Follows the admin across devices: the customer may open the confirmation link on another phone.
+  useLiveSync(ready);
 
   if (!ready) return <div className="h-96 animate-pulse rounded-md bg-butter" aria-hidden="true" />;
   if (!order) {

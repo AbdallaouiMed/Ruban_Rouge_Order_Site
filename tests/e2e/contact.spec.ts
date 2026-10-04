@@ -18,11 +18,11 @@ test("contact form validates every field with translated messages and focuses th
   await expect(page.getByText("Téléphone invalide.")).toBeVisible();
 });
 
-test("the contact page shows the hours card, a live open badge and the map placeholder", async ({ page }) => {
+test("the contact page shows the hours card, a live open badge and the real map", async ({ page }) => {
   await page.goto("/fr/contact");
   await expect(page.getByRole("status").filter({ hasText: /Ouvert maintenant|Fermé actuellement/ })).toBeVisible();
   await expect(page.getByRole("main").getByText("Tous les jours")).toBeVisible();
-  await expect(page.getByText("La carte sera ajoutée prochainement.")).toBeVisible();
+  await expect(page.locator("iframe[src^='https://www.google.com/maps']")).toBeVisible();
   await expect(page.getByRole("link", { name: "Itinéraire" })).toHaveAttribute("href", /google\.com\/maps/);
 });
 

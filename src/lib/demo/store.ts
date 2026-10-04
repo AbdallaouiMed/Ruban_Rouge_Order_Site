@@ -7,6 +7,7 @@ import { baseProducts, applyOverrides } from "@/lib/catalog";
 import { applyStatus, createCakeRequest, createOrder, demoOrder, type CreateResult, type OrderInput } from "@/lib/orders";
 import type { CakeSpec, CartItem, GiftInfo, Order, OrderStatus, ProductOverride, Settings, SiteImageSlot } from "@/lib/demo/types";
 import { isDemo } from "@/lib/demo/config";
+import { pushOrder } from "@/lib/demo/live";
 import type { Locale } from "@/i18n/routing";
 
 /** localStorage that never throws; quota errors are surfaced through an event the admin listens to. */
@@ -105,10 +106,13 @@ interface DemoData {
   setOverride: (slug: string, patch: ProductOverride | null) => void;
   setSiteImage: (slot: SiteImageSlot, dataUrl: string | null) => void;
   updateSettings: (patch: Partial<Settings>) => void;
-  placeOrder: (input: OrderInput) => CreateResult;
-  placeCakeRequest: (args: { spec: Omit<CakeSpec, "summary">; customer: OrderInput["customer"]; locale: Locale }) => CreateResult;
+  /** `seq` is a number reserved from the server, so devices never share an order number. */
+  placeOrder: (input: OrderInput, seq?: number) => CreateResult;
+  placeCakeRequest: (args: { spec: Omit<CakeSpec, "summary">; customer: OrderInput["customer"]; locale: Locale; seq?: number }) => CreateResult;
   setStatus: (id: string, status: OrderStatus, note?: string) => void;
   simulateOrder: () => Order;
+  /** Merge orders from the shared list: add unknown ones, take a remote copy that has more history. */
+  mergeRemote: (remote: Order[]) => void;
   seedIfEmpty: () => void;
   resetAll: () => void;
 }
@@ -138,25 +142,33 @@ export const useDemoData = create<DemoData>()(
 
       updateSettings: (patch) => set((s) => ({ settings: { ...s.settings, ...patch } })),
 
-      placeOrder: (input) => {
+      placeOrder: (input, reserved) => {
         // Without demo mode there is no browser-only fallback: the real back end must take the order.
         if (!isDemo) return { ok: false, error: "offline" };
         const s = get();
         const products = applyOverrides(baseProducts(), s.overrides);
-        const result = createOrder({ input, products, settings: s.settings, seq: s.seq + 1 });
-        if (result.ok) set({ orders: keepNewest([result.order, ...s.orders]), seq: s.seq + 1 });
+        const seq = Math.max(s.seq + 1, reserved ?? 0);
+        const result = createOrder({ input, products, settings: s.settings, seq });
+        if (result.ok) {
+          set({ orders: keepNewest([result.order, ...s.orders]), seq });
+          void pushOrder(result.order);
+        }
         return result;
       },
 
-      placeCakeRequest: ({ spec, customer, locale }) => {
+      placeCakeRequest: ({ spec, customer, locale, seq: reserved }) => {
         if (!isDemo) return { ok: false, error: "offline" };
         const s = get();
-        const result = createCakeRequest({ spec, customer, locale, settings: s.settings, seq: s.seq + 1 });
-        if (result.ok) set({ orders: keepNewest([result.order, ...s.orders]), seq: s.seq + 1 });
+        const seq = Math.max(s.seq + 1, reserved ?? 0);
+        const result = createCakeRequest({ spec, customer, locale, settings: s.settings, seq });
+        if (result.ok) {
+          set({ orders: keepNewest([result.order, ...s.orders]), seq });
+          void pushOrder(result.order);
+        }
         return result;
       },
 
-      setStatus: (id, status, note) =>
+      setStatus: (id, status, note) => {
         set((s) => ({
           orders: s.orders.map((o) => {
             if (o.id !== id) return o;
@@ -166,7 +178,28 @@ export const useDemoData = create<DemoData>()(
               return o;
             }
           }),
-        })),
+        }));
+        const updated = get().orders.find((o) => o.id === id);
+        if (updated) void pushOrder(updated);
+      },
+
+      mergeRemote: (remote) => {
+        const s = get();
+        const byId = new Map(s.orders.map((o) => [o.id, o]));
+        let changed = false;
+        for (const r of remote) {
+          const local = byId.get(r.id);
+          if (!local || r.history.length > local.history.length) {
+            byId.set(r.id, r);
+            changed = true;
+          }
+        }
+        if (!changed) return;
+        const orders = keepNewest([...byId.values()].sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
+        // Keep numbering ahead of orders taken on other devices, so this device does not reuse a number.
+        const highest = Math.max(0, ...remote.map((r) => Number(r.number.replace(/\D/g, "")) - 1000));
+        set({ orders, seq: Math.max(s.seq, highest) });
+      },
 
       simulateOrder: () => {
         const s = get();

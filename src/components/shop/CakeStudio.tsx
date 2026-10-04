@@ -11,6 +11,8 @@ import { PastryArt } from "@/components/ui/PastryArt";
 import { cakeEstimate } from "@/lib/pricing";
 import { useSettings } from "@/lib/demo/hooks";
 import { useDemoData } from "@/lib/demo/store";
+import { useLiveSync } from "@/components/demo/useLiveSync";
+import { reserveSeq } from "@/lib/demo/live";
 import { formatDay, formatMad } from "@/lib/format";
 import { ImageError, resizeImage } from "@/lib/image";
 import { wallClock } from "@/lib/slots";
@@ -44,6 +46,7 @@ export function CakeStudio() {
   const params = useSearchParams();
   const settings = useSettings();
   const placeCakeRequest = useDemoData((s) => s.placeCakeRequest);
+  useLiveSync(true); // keeps request numbers ahead of orders taken on other devices
   const fileRef = useRef<HTMLInputElement>(null);
 
   const fromUrl = params.get("occasion");
@@ -89,13 +92,15 @@ export function CakeStudio() {
     setStep((s) => Math.min(STEPS.length - 1, s + 1));
   }
 
-  function submit(e: React.FormEvent<HTMLFormElement>) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
+    const seq = (await reserveSeq()) ?? undefined;
     const res = placeCakeRequest({
       spec: { occasion, servings: sizeOpt.servings, flavor, filling, frosting, decorations, dedication: dedication.trim(), date, budget, estimateLow: estimate?.low ?? 0, estimateHigh: estimate?.high ?? 0, photo },
       customer: { name: String(fd.get("name") ?? ""), phone: String(fd.get("phone") ?? ""), email: String(fd.get("email") ?? "") || undefined },
       locale,
+      seq,
     });
     if (res.ok) router.push(`/order/${res.order.id}`);
     else setError(t(`errors.${res.error}`, { date: formatDay(minDate, locale) }));

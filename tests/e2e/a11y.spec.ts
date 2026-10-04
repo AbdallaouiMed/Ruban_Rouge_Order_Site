@@ -69,7 +69,7 @@ for (const p of ["", "/orders", "/products", "/images", "/settings"]) {
 
 test("a11y admin login", async ({ page }) => {
   await page.goto("/fr/admin");
-  await expect(page.getByRole("heading", { name: "Espace admin" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Connexion" })).toBeVisible();
   expect(await scan(page)).toEqual([]);
 });
 

@@ -9,7 +9,7 @@ const openOrder = (admin: Page, number: string) => admin.getByRole("region", { n
 
 test("admin login rejects a wrong password and accepts the demo one", async ({ page }) => {
   await page.goto("/fr/admin");
-  await expect(page.getByRole("heading", { name: "Espace admin" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Connexion" })).toBeVisible();
   await page.getByLabel("Mot de passe").fill("nope");
   await page.getByRole("button", { name: "Se connecter" }).click();
   await expect(page.locator("#pw-err")).toHaveText("Mot de passe incorrect.");

@@ -44,11 +44,11 @@ npm run dev        # http://localhost:3000  (French by default)
 | `npm run check:contrast` | WCAG contrast of every palette pair |
 | `npm run check:placeholders` | Lists everything the owners still have to provide |
 
-Open the site at `/fr`, `/ar` or `/en`. The admin is at `/fr/admin` (demo password: `demo`).
+Open the site at `/fr`, `/ar` or `/en`. The admin is at `/fr/admin` (the demo password is shared by the developer, not shown on the page).
 
 ## The demo admin
 
-Open `/fr/admin` and sign in with `demo`. It is French only.
+Open `/fr/admin` and sign in with the demo password (`DEMO_ADMIN_PASSWORD` in `src/lib/demo/config.ts`). It is French only.
 
 - **Orders**: orders placed on the public site arrive live (try it: keep the admin open, place an order in another tab). Move each one through *Nouvelle → Confirmée → En préparation → Prête (or En livraison) → Terminée*, or cancel it with a reason. The customer's confirmation page follows the status live. Print a kitchen ticket, call or WhatsApp the customer. "Simuler une commande" creates a sample order.
 - **Produits et prix**: change a price, mark *fresh today* or *sold out*, upload a product photo. A product with no price or marked sold out cannot be ordered.

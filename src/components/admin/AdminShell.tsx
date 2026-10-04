@@ -80,9 +80,9 @@ function Login() {
       <form onSubmit={submit} className="w-full max-w-sm space-y-5 rounded-md bg-white p-8 shadow-lift" aria-labelledby="login-title">
         <Logo />
         <div>
-          <h1 id="login-title" className="font-display text-(length:--text-2xl)">Espace admin</h1>
-          <p className="mt-1 rounded-sm bg-butter p-3 text-(length:--text-sm)">
-            Version de démonstration : aucun vrai compte. Mot de passe : <strong>{DEMO_ADMIN_PASSWORD}</strong>
+          <h1 id="login-title" className="font-display text-(length:--text-2xl)">Connexion</h1>
+          <p className="mt-1 text-(length:--text-sm) text-cocoa-soft">
+            Espace de gestion : commandes, produits, prix et réglages de la boutique.
           </p>
         </div>
         <div>
@@ -152,7 +152,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
           <button type="button" onClick={toggleSound} aria-pressed={sound} className="flex min-h-11 w-full items-center gap-2 rounded-sm px-3 hover:bg-flour/10">{sound ? <Volume2 aria-hidden="true" className="size-4" /> : <VolumeX aria-hidden="true" className="size-4" />}Son des commandes : {sound ? "oui" : "non"}</button>
           <button type="button" onClick={() => writeFlag(SESSION_KEY, false)} className="flex min-h-11 w-full items-center gap-2 rounded-sm px-3 hover:bg-flour/10"><LogOut aria-hidden="true" className="size-4" />Se déconnecter</button>
         </div>
-        <p className="rounded-sm bg-flour/10 p-3 text-(length:--text-xs)">Démo : données enregistrées sur cet appareil uniquement.</p>
+        <p className="rounded-sm bg-flour/10 p-3 text-(length:--text-xs)">Données enregistrées sur cet appareil.</p>
       </aside>
 
       <div className="min-w-0 pb-24 lg:pb-0">
